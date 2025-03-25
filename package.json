@@ -13,6 +13,7 @@
     "@hookform/resolvers": "^4.1.0",
     "@radix-ui/react-label": "^2.1.2",
     "@react-three/drei": "^9.121.5",
+    "@studio-freight/lenis": "^1.0.42",
     "@tabler/icons-react": "^3.30.0",
     "@tsparticles/engine": "^3.8.1",
     "@tsparticles/react": "^3.0.0",

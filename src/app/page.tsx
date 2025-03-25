@@ -1,79 +1,78 @@
 "use client";
 import { useEffect, useState } from "react";
+import Lenis from "@studio-freight/lenis"; // Corrected Import
+
 import { Loader } from "@/components/Loader";
 import { Hero } from "@/components/Hero";
-import { Header } from "@/components/Header";
-
-import { ReactLenis } from "lenis/react";
-
-import {About} from "@/components/About"
-import { Projects } from "@/components/Projects";
-import { Support } from "@/components/Services";
-import { Footer } from "@/components/Footer";
-import { Clients } from "@/components/Clients";
-import { JoinUs } from "@/components/JoinUs";
-import { ContainerScroll } from "@/components/ui/container-scroll-animation";
-// import { Services } from "@/components/Services";
-import { TheNext } from "@/components/TheNext";
-import { Contact } from "@/components/Contact/index";
 import { FloatingNav } from "@/components/ui/floating-navbar";
 import { IconHome, IconMessage, IconUser } from "@tabler/icons-react";
+
+import { TheNext } from "@/components/TheNext";
+import { Contact } from "@/components/Contact/index";
+import { Clients } from "@/components/Clients";
+import { Footer } from "@/components/Footer";
+import { Support } from "@/components/Services";
+import { JoinUs } from "@/components/JoinUs";
+import { ContainerScroll } from "@/components/ui/container-scroll-animation";
 
 export default function Home() {
   const [isLoading, setIsLoading] = useState(false);
 
+  useEffect(() => {
+    const lenis = new Lenis({
+      duration: 1.2, // Adjusts the scrolling speed
+      easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)), // Smooth easing function
+      gestureOrientation: "vertical", // Ensures smooth vertical scrolling
+      infinite: false, // Prevents infinite scrolling
+    });
+    
+
+    function raf(time: any) {
+      lenis.raf(time);
+      requestAnimationFrame(raf);
+    }
+
+    requestAnimationFrame(raf);
+
+    return () => {
+      lenis.destroy();
+    };
+  }, []);
+
   const navItems = [
-      {
-        name: "Home",
-        link: "#home",
-        icon: <IconHome className="h-4 w-4 text-neutral-500 dark:text-white" />,
-      },
-      {
-        name: "Services",
-        link: "#services",
-        icon: <IconUser className="h-4 w-4 text-neutral-500 dark:text-white" />,
-      },
-      {
-        name: "Reviews",
-        link: "#reviews",
-        icon: (
-          <IconMessage className="h-4 w-4 text-neutral-500 dark:text-white" />
-        ),
-      },
-    ];
+    {
+      name: "Home",
+      link: "#home",
+      icon: <IconHome className="h-4 w-4 text-neutral-500 dark:text-white" />,
+    },
+    {
+      name: "Services",
+      link: "#services",
+      icon: <IconUser className="h-4 w-4 text-neutral-500 dark:text-white" />,
+    },
+    {
+      name: "Reviews",
+      link: "#reviews",
+      icon: <IconMessage className="h-4 w-4 text-neutral-500 dark:text-white" />,
+    },
+  ];
+
   return (
-    <ReactLenis root>
+    <main className="bg-white text-black">
       {isLoading ? (
         <Loader onAnimationComplete={() => setIsLoading(false)} />
       ) : (
-        <main className="bg-white text-black">
-           <FloatingNav navItems={navItems} />
-          {/* <Header /> */}
+        <>
+          <FloatingNav navItems={navItems} />
           <Hero />
           <ContainerScroll titleComponent={undefined} children={<JoinUs />} />
-          
-
           <TheNext />
-          
-          {/* About before Projects (Hidden on md screens) */}
-          <div className="block md:hidden lg:block">
-            {/* <About /> */}
-          </div>
-
           <Support />
-          {/* <Projects /> */}
-
-          {/* About after Projects (Visible only on md screens) */}
-          {/* <div className="hidden md:block">
-            <About />
-          </div> */}
-
           <Clients />
-          {/* <Services /> */}
           <Contact />
           <Footer />
-        </main>
+        </>
       )}
-    </ReactLenis>
+    </main>
   );
 }

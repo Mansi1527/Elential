@@ -23,10 +23,22 @@ export const Footer = () => {
               Instagram
             </Link>
             <Link
+              href="https://www.linkedin.com/in/elential-229bb9357/"
+              className="text-sm md:text-base font-medium transition hover:text-primary"
+            >
+              Linkedin
+            </Link>
+            <Link
               href="mailto:contact.elential@gmail.com"
               className="text-sm md:text-base font-medium transition hover:text-primary"
             >
               Email
+            </Link>
+            <Link
+              href="https://wa.me/919336885413"
+              className="text-sm md:text-base font-medium transition hover:text-primary"
+            >
+              Whatsaap
             </Link>
           </div>
         </nav>

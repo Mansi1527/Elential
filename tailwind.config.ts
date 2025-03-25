@@ -1,6 +1,6 @@
 import type { Config } from "tailwindcss";
 
-export default {
+const tailwindConfig: Config = {
   content: [
     "./src/pages/**/*.{js,ts,jsx,tsx,mdx}",
     "./src/components/**/*.{js,ts,jsx,tsx,mdx}",
@@ -14,43 +14,7 @@ export default {
       },
     },
   },
-  plugins: [
-    require('daisyui'),
-  ],
-} satisfies Config;
+  plugins: [require("daisyui")],
+};
 
-
-
-// const defaultTheme = require("tailwindcss/defaultTheme");
-// const colors = require("tailwindcss/colors");
-// const flattenColorPalette = require("tailwindcss/lib/util/flattenColorPalette");
-// const daisyui = require("daisyui");
-
-// module.exports = {
-//   content: [
-//     "./src/pages/**/*.{js,ts,jsx,tsx,mdx}",
-//     "./src/components/**/*.{js,ts,jsx,tsx,mdx}",
-//     "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
-//   ],
-//   darkMode: "class",
-//   theme: {
-//     extend: {
-//       colors: {
-//         background: "var(--background)",
-//         foreground: "var(--foreground)",
-//       },
-//     },
-//   },
-//   plugins: [daisyui, addVariablesForColors],
-// };
-
-// function addVariablesForColors({ addBase, theme }) {
-//   let allColors = flattenColorPalette(theme("colors"));
-//   let newVars = Object.fromEntries(
-//     Object.entries(allColors).map(([key, val]) => [`--${key}`, val])
-//   );
-
-//   addBase({
-//     ":root": newVars,
-//   });
-// }
+export default tailwindConfig;
