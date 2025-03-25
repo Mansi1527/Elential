@@ -167,13 +167,13 @@ export const Contact = () => {
     
 
     return (
-        <div id="contactus" className="bg-black min-h-screen mt-32  py-48 md:py-32 px-5 md:px-10 w-full flex items-center justify-center">
+        <div id="contactus" className="bg-black min-h-screen mt-32  py-32  md:py-32 px-5 md:px-10 w-full flex items-center justify-center">
             <WavyBackground>
                 <motion.div
                     initial={{ opacity: 0, y: -20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.5 }}
-                    className="bg-transparent py-6 md:p-6 pt-20 rounded-lg md:gap-10 w-full max-w-screen flex flex-col md:flex-row md:px-10 md:border border-gray-300"
+                    className="bg-transparent py-6 md:p-6 pb-20 rounded-lg md:gap-10 w-full max-w-screen flex flex-col md:flex-row md:px-10 md:border border-gray-300"
                 >
                     <div className="flex flex-col justify-center items-center md:w-1/2 text-center md:text-left">
                         <h1 className="text-white md:text-5xl text-3xl">
