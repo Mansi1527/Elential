@@ -53,7 +53,7 @@ export const JoinUs = () => {
                     {/* Search Bar */}
                     <div className="flex items-center px-4 py-2 bg-white border-t border-gray-300">
                         <div className="flex items-center flex-grow gap-2 px-4 py-2 bg-gray-100 rounded-full shadow-inner">
-                            <span className="text-gray-400"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <span className="text-gray-400"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" stroke-linecap="round" stroke-linejoin="round">
                                 <circle cx="12" cy="12" r="3"></circle>
                                 <path d="M19.4 15a2 2 0 0 1 .4 2.2l-1 1.7a2 2 0 0 1-2.5.8l-1.2-.5a6.9 6.9 0 0 1-2.4 0l-1.2.5a2 2 0 0 1-2.5-.8l-1-1.7a2 2 0 0 1 .4-2.2l.9-.8a6.5 6.5 0 0 1 0-2.4l-.9-.8a2 2 0 0 1-.4-2.2l1-1.7a2 2 0 0 1 2.5-.8l1.2.5a6.9 6.9 0 0 1 2.4 0l1.2-.5a2 2 0 0 1 2.5.8l1 1.7a2 2 0 0 1-.4 2.2l-.9.8a6.5 6.5 0 0 1 0 2.4z"></path>
                             </svg></span>

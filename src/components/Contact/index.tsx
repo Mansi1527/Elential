@@ -25,6 +25,8 @@ import { Schema } from "./yup";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { useRef, useState } from "react";
 import emailjs from "@emailjs/browser";  // Import EmailJS
+import { countriesWithCurrency, websiteOptions, companySizeOptions, companyTypeOptions } from "@/data/countries";
+
 
 const serviceID = "service_2c1ybdc";      // Replace with your EmailJS service ID
 const templateID = "template_y0doqwp";    // Replace with your EmailJS template ID
@@ -35,33 +37,33 @@ const formatLabel = (name: string) => {
     return formattedName.charAt(0).toUpperCase() + formattedName.slice(1);
 };
 
-const countriesWithCurrency = [
-    { country: "United States", currency: "$" },
-    { country: "United Kingdom", currency: "£" },
-    { country: "India", currency: "₹" },
-    { country: "Eurozone", currency: "€" },
-    { country: "Japan", currency: "¥" },
-];
+// const countriesWithCurrency = [
+//     { country: "United States", currency: "$" },
+//     { country: "United Kingdom", currency: "£" },
+//     { country: "India", currency: "₹" },
+//     { country: "Eurozone", currency: "€" },
+//     { country: "Japan", currency: "¥" },
+// ];
 
-const websiteOptions = [
-    { country: "Static" },
-    { country: "Dynamic" }
-];
+// const websiteOptions = [
+//     { country: "Static" },
+//     { country: "Dynamic" }
+// ];
 
-const companySizeOptions=[
-    {country:">30"},
-    {country:"<30 && >50"},
-    {country:"<50 && >100"},
-    {country:"<100 && >200"},
-    {country:"<200 && >300"},
+// const companySizeOptions=[
+//     {country:">30"},
+//     {country:"<30 && >50"},
+//     {country:"<50 && >100"},
+//     {country:"<100 && >200"},
+//     {country:"<200 && >300"},
 
-]
+// ]
 
-const companyTypeOptions=[
-    {country:"Ecommerce"},
-    {country:"IT"},
-    {country:"Management"},
-]
+// const companyTypeOptions=[
+//     {country:"Ecommerce"},
+//     {country:"IT"},
+//     {country:"Management"},
+// ]
 
 const InputField = ({ name, control, type = "text", errors, placeholder, prefix }: any) => (
     <div className="flex flex-col space-y-1 w-full">
