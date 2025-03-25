@@ -185,7 +185,7 @@ export const Contact = () => {
                     </div>
 
                     <form ref={formRef} onSubmit={handleSubmit(onSubmit)} className="space-y-2 mt-10 w-full flex flex-col justify-center items-center md:w-1/2">
-                        <h1 className="text-white text-xl text-center md:hidden">Contact Us</h1>
+                        {/* <h1 className="text-white text-xl text-center md:hidden">Contact Us</h1> */}
                         <InputField name="representativeName" control={control} placeholder="Enter Your Name" errors={errors} />
                         <SelectField name="websiteFor" control={control} options={[
                             { country: "self", label: "For Myself" },
