@@ -16,7 +16,7 @@ import { JoinUs } from "@/components/JoinUs";
 import { ContainerScroll } from "@/components/ui/container-scroll-animation";
 
 export default function Home() {
-  const [isLoading, setIsLoading] = useState(false);
+  const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
     const lenis = new Lenis({
@@ -60,7 +60,7 @@ export default function Home() {
   return (
     <main className="bg-white text-black">
       {isLoading ? (
-        <Loader onAnimationComplete={() => setIsLoading(true)} />
+        <Loader onAnimationComplete={() => setIsLoading(false)} />
       ) : (
         <>
           <FloatingNav navItems={navItems} />
