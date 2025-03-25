@@ -60,7 +60,7 @@ export default function Home() {
   return (
     <main className="bg-white text-black">
       {isLoading ? (
-        <Loader onAnimationComplete={() => setIsLoading(true)} />
+        <Loader onAnimationComplete={() => setIsLoading(false)} />
       ) : (
         <>
           <FloatingNav navItems={navItems} />
