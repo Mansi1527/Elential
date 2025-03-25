@@ -173,7 +173,7 @@ export const Contact = () => {
                     initial={{ opacity: 0, y: -20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.5 }}
-                    className="bg-transparent py-6 md:p-6 pb-20 rounded-lg md:gap-10 w-full max-w-screen flex flex-col md:flex-row md:px-10 md:border border-gray-300"
+                    className="bg-transparent py-6 md:p-6 pb-10 rounded-lg md:gap-10 w-full max-w-screen flex flex-col md:flex-row md:px-10 md:border border-gray-300"
                 >
                     <div className="flex flex-col justify-center items-center md:w-1/2 text-center md:text-left">
                         <h1 className="text-white md:text-5xl text-3xl">
