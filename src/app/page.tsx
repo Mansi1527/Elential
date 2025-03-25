@@ -16,7 +16,7 @@ import { JoinUs } from "@/components/JoinUs";
 import { ContainerScroll } from "@/components/ui/container-scroll-animation";
 
 export default function Home() {
-  const [isLoading, setIsLoading] = useState(true);
+  const [isLoading, setIsLoading] = useState(false);
 
   useEffect(() => {
     const lenis = new Lenis({

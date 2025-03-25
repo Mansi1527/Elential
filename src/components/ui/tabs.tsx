@@ -37,7 +37,7 @@ export const Tabs = ({
   const [hovering, setHovering] = useState(false);
 
   return (
-    <div className="flex flex-col md:flex-row gap-10 ">
+    <div className="flex flex-col md:flex-row gap-10 text-black">
       <div
         className={cn(
           "flex md:flex-col px-2 md:ml-10 sm:flex-row flex-wrap text-center justify-start [perspective:1000px] relative  sm:overflow-visible no-visible-scrollbar mt-10 md:mt-32",
@@ -62,7 +62,7 @@ export const Tabs = ({
                 layoutId="clickedbutton"
                 transition={{ type: "spring", bounce: 0.3, duration: 0.6 }}
                 className={cn(
-                  "absolute inset-0 bg-gray-200 dark:bg-zinc-800 rounded-xl ",
+                  "absolute inset-0 bg-gray-200 text-black dark:bg-zinc-800 rounded-xl ",
                   activeTabClassName
                 )}
               />

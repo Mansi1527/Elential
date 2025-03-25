@@ -33,8 +33,8 @@ export const JoinUs = () => {
     }, []);
 
     return (
-        <div ref={sectionRef} className="pb-10 h-full">
-            <div className="flex flex-col gap-2">
+        <div ref={sectionRef} className="pb-10 h-full bg-gray-100">
+            <div className="flex flex-col gap-2 bg-gray-100">
                 {/* Chrome-like Browser (Desktop) */}
                 <div className="hidden md:block w-full bg-gray-100 border border-gray-300 rounded-lg">
                     {/* Tabs Section */}

@@ -4,10 +4,10 @@ import { Cover } from "@/components/ui/cover";
 export const TheNext = () => {
   return (
     <div className="flex  flex-col justify-center items-center px-4">
-      <h1 className="text-4xl md:text-5xl lg:text-6xl font-semibold max-w-7xl mx-auto text-center  relative z-20  bg-clip-text text-transparent bg-gradient-to-b from-neutral-800 via-neutral-700 to-neutral-700 dark:from-neutral-800 dark:via-white dark:to-white">
+      <h1 className="text-4xl md:text-5xl lg:text-6xl font-semibold max-w-7xl mx-auto text-center  relative z-20  bg-clip-text text-transparent bg-gradient-to-b from-neutral-800 via-neutral-700 to-neutral-700 ">
         Build next-gen websites with <Cover>unmatched velocity</Cover>
       </h1>
-      <p className="text-xl md:text-2xl max-w-2xl text-center mt-4 text-gray-700 dark:text-gray-300">
+      <p className="text-xl md:text-2xl max-w-2xl text-center mt-4 text-gray-700 ">
         We empower you with game-changing advantages to seamlessly navigate your digital transformation.
       </p>
       <button className="btn-66 relative overflow-hidden border-2 bg-black border-white text-transparent font-bold uppercase px-14 h-10 rounded-full transition-all duration-200 hover:border-wheat mt-6">
