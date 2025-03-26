@@ -6,6 +6,8 @@ import { Loader } from "@/components/Loader";
 import { Hero } from "@/components/Hero";
 import { FloatingNav } from "@/components/ui/floating-navbar";
 import { IconHome, IconMessage, IconUser } from "@tabler/icons-react";
+// import { GrProjects } from "react-icons/gr";
+import { GoProjectSymlink } from "react-icons/go";
 
 import { TheNext } from "@/components/TheNext";
 import { Contact } from "@/components/Contact/index";
@@ -14,7 +16,7 @@ import { Footer } from "@/components/Footer";
 import { Support } from "@/components/Services";
 import { JoinUs } from "@/components/JoinUs";
 import { ContainerScroll } from "@/components/ui/container-scroll-animation";
-
+// import { Projects } from "@/components/Projects";
 export default function Home() {
   const [isLoading, setIsLoading] = useState(true);
 
@@ -55,6 +57,11 @@ export default function Home() {
       link: "#reviews",
       icon: <IconMessage className="h-4 w-4 text-neutral-500 dark:text-white" />,
     },
+    {
+      name: "Projects",
+      link: "https://ggopen.my.canva.site/designs-portfolio",
+      icon: <GoProjectSymlink className="h-4 w-4 text-neutral-500 dark:text-white" />,
+    }
   ];
 
   return (
@@ -69,6 +76,7 @@ export default function Home() {
           <TheNext />
           <Support />
           <Clients />
+          {/* <Projects/> */}
           <Contact />
           <Footer />
         </>

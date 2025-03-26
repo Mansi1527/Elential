@@ -8,14 +8,14 @@ export const Loader = ({ onAnimationComplete }: { onAnimationComplete: () => voi
     hidden: { rotate: -180 },
     visible: {
       rotate: 0,
-      transition: { duration: 1, delay: 5 },
+      transition: { duration: 1, delay: 4 },
 
     },
     zommed: {
       scale: 20,
       transition: {
-        duration: 2,
-        delay: 8,
+        duration: 1,
+        delay: 5,
         ease: "easeInOut"
       }
 
@@ -38,17 +38,17 @@ export const Loader = ({ onAnimationComplete }: { onAnimationComplete: () => voi
       fill: ["gray", "black", "gray"],
       pathLength: 1,
       transition: {
-        duration: 5,
+        duration: 2,
         delay: 2,
         ease: "easeInOut",
-        fill: { duration: 2, repeat: Infinity, repeatType: "reverse" },
+        fill: { duration: 1, repeat: Infinity, repeatType: "reverse" },
 
       }
 
     },
     fullWhite: {
       fill: "white", // Final transition to full white
-      transition: { duration: 0.1, delay: 7 },
+      transition: { duration: 0.1, delay: 4 },
     },
   }
 
@@ -58,7 +58,7 @@ export const Loader = ({ onAnimationComplete }: { onAnimationComplete: () => voi
     expand: {
       x: 0,
       width: 50,
-      transition: { duration: 2, ease: "easeOut" },
+      transition: { duration: 1, ease: "easeOut" },
     },
     fadeOut: {
       opacity: 0,
@@ -70,7 +70,7 @@ export const Loader = ({ onAnimationComplete }: { onAnimationComplete: () => voi
     expand: {
       x: 0,
       width: 50,
-      transition: { duration: 2, ease: "easeOut" },
+      transition: { duration: 1, ease: "easeOut" },
     },
     fadeOut: {
       opacity: 0,
@@ -82,7 +82,7 @@ export const Loader = ({ onAnimationComplete }: { onAnimationComplete: () => voi
   useEffect(() => {
     const timer = setTimeout(() => {
       onAnimationComplete(); // Hide animation after it finishes
-    }, 9300); // Adjust timing based on your longest animation
+    }, 5700); // Adjust timing based on your longest animation
 
     return () => clearTimeout(timer);
   }, [onAnimationComplete]);
