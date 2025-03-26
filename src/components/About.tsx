@@ -3,7 +3,7 @@ import Link from "next/link";
 
 export const About = () => {
   return (
-    <div id="about" className="overflow-hidden dark:bg-[#0B0B0F] bg-white w-full md:px-10">
+    <div id="about" className="overflow-hidden  bg-white w-full md:px-10">
       <div className="flex flex-col lg:flex-row md:gap-10 items-center justify-center lg:space-x-20 px-4 lg:px-8">
         
         {/* Text Section */}
