@@ -84,7 +84,7 @@ export const FloatingNav = ({
         <Button
         borderRadius="1.75rem"
         
-        className="bg-white hover:scale-125 dark:bg-slate-900 text-black dark:text-white border-neutral-200 dark:border-slate-800"
+        className="bg-white hover:scale-125  text-black  border-neutral-200 "
       >
         Contact Us
       </Button>
