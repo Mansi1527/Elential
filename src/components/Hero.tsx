@@ -8,7 +8,7 @@ export const Hero = () => {
 
   return (
     <>
-      <Image src="/elevate.png" width={150} height={200} alt="" className="hidden md:flex justify-start" />
+      <Image src="/logo.jpg" width={150} height={200} alt="" className="hidden md:flex justify-start" />
       <div id="home" className="w-full px-16  flex flex-col items-center justify-center md:mt-0 lg:mt-10">
 
         <div id="home" className="flex flex-col-reverse sm:flex-row md:mt-0  mt-20 w-full  mx-10 md:mx-20 ">
