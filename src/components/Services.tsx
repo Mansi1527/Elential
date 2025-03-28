@@ -65,8 +65,6 @@ export const Support = () => {
     },
   ];
 
-
-
   return (
     <div id="services" className="">
 
@@ -87,12 +85,6 @@ export const Support = () => {
   );
 }
 
-
-
-
-
-
-
 const DummyContent = ({ src, title,desc }: { src: string; title: string; desc: string}) => {
   return (
     <div className="relative w-full h-full rounded-xl overflow-hidden">
@@ -106,7 +98,7 @@ const DummyContent = ({ src, title,desc }: { src: string; title: string; desc: s
       />
       
       {/* Dark overlay for readability */}
-      <div className="absolute inset-0 bg-black/60"></div>
+      <div className="absolute inset-0 bg-black/20"></div>
 
       {/* Title at the top-left */}
       <h2 className="absolute top-10 left-5 text-white text-xl md:text-4xl font-bold z-10">
@@ -114,9 +106,14 @@ const DummyContent = ({ src, title,desc }: { src: string; title: string; desc: s
       </h2>
 
       {/* Centered Text */}
-      <p className="absolute mx-10 inset-0 flex justify-center items-center text-white font-thin text-lg md:text-sm lg:text-xl z-10">
+      {/* <p className="absolute mx-10 inset-0 flex justify-center items-center text-white font-thin text-lg md:text-sm lg:text-xl z-10">
       {desc}
-      </p>
+      </p> */}
+       <div className="absolute inset-0 flex justify-center items-center z-10 px-10">
+        <p className="relative text-white font-thin text-lg md:text-sm lg:text-xl px-6 py-3 rounded-lg bg-black/30 backdrop-blur-md">
+          {desc}
+        </p>
+      </div>
     </div>
   );
 };

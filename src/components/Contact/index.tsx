@@ -8,7 +8,7 @@ import { yupResolver } from "@hookform/resolvers/yup";
 import { useRef, useState } from "react";
 import emailjs from "@emailjs/browser";  // Import EmailJS
 import { countriesWithCurrency, websiteOptions, companySizeOptions, companyTypeOptions } from "@/data/countries";
-
+import { Cover } from "@/components/ui/cover";
 
 const serviceID = "service_2c1ybdc";      // Replace with your EmailJS service ID
 const templateID = "template_y0doqwp";    // Replace with your EmailJS template ID
@@ -49,30 +49,34 @@ const SelectField = ({ name, control, options, errors, onChange }: any) => (
         <Controller
             name={name}
             control={control}
+            defaultValue=""
             render={({ field: { onChange: fieldOnChange, value } }) => (
-                <select
-                    name={name}  // ✅ Ensure name is included
-                    value={value}
-                    onChange={(e) => {
-                        fieldOnChange(e.target.value);
-                        if (onChange) onChange(e.target.value);
-                    }}
-                    className="w-full p-2 text-white border border-gray-600 rounded-md outline-none bg-transparent"
-                >
-                    <option value="" className="text-white">
-                        Select {formatLabel(name)}
-                    </option>
-                    {options.map((option: { country: string }) => (
-                        <option key={option.country} value={option.country} className="text-black">
-                            {option.country}
+                <div className="relative w-full">
+                    <select
+                        name={name}
+                        value={value}
+                        onChange={(e) => {
+                            fieldOnChange(e.target.value);
+                            if (onChange) onChange(e.target.value);
+                        }}
+                        className="w-full p-2 bg-black text-white border border-gray-600 rounded-md outline-none custom-select"
+                    >
+                        <option  value="" disabled hidden className="bg-black text-white">
+                            Select {formatLabel(name)}
                         </option>
-                    ))}
-                </select>
+                        {options.map((option: { country: string }) => (
+                            <option key={option.country} value={option.country} className="custom-option">
+                                {option.country}
+                            </option>
+                        ))}
+                    </select>
+                </div>
             )}
         />
         {errors[name] && <p className="text-red-500 text-sm">{errors[name].message}</p>}
     </div>
 );
+
 
 
 
@@ -102,7 +106,7 @@ export const Contact = () => {
     };
 
     const onSubmit = (data: any) => {
-       
+
         const emailData = {
             representativeName: data.representativeName,
             companyName: data.companyName || "N/A",
@@ -118,15 +122,15 @@ export const Contact = () => {
         emailjs
             .send(serviceID, templateID, emailData, userID)
             .then(
-                ()=>setThankuVisible(true),
+                () => setThankuVisible(true),
                 (error) => alert("Failed to send message: " + error.text)
             );
-            
+
     };
 
 
     return (
-        <div id="contactus" className="bg-black min-h-screen mt-32  py-32  md:py-32 px-5 md:px-10 w-full flex items-center justify-center">
+        <div id="contactus" className="bg-black winky-sans min-h-screen mt-32  py-32  md:py-32 px-5 md:px-10 w-full flex items-center justify-center">
             <WavyBackground>
                 {!thankuVisible &&
                     <motion.div
@@ -136,7 +140,7 @@ export const Contact = () => {
                         className="bg-transparent py-6 md:p-6 pb-10 rounded-lg md:gap-10 w-full max-w-screen flex flex-col md:flex-row md:px-10 md:border border-gray-300"
                     >
                         <div className="flex flex-col justify-center items-center md:w-1/2 text-center md:text-left">
-                            <h1 className="text-white md:text-5xl text-3xl">
+                            <h1 className="text-white md:text-5xl text-3xl text-center">
                                 Let's level up your brand, together
                             </h1>
                             <p className="text-gray-200 mt-5">
@@ -148,8 +152,8 @@ export const Contact = () => {
                             {/* <h1 className="text-white text-xl text-center md:hidden">Contact Us</h1> */}
                             <InputField name="representativeName" control={control} placeholder="Enter Your Name" errors={errors} />
                             <SelectField name="websiteFor" control={control} options={[
-                                { country: "self", label: "For Myself" },
-                                { country: "company", label: "For My Company" }
+                                { country: "Self", label: "For Myself" },
+                                { country: "Company", label: "For My Company" }
                             ]} errors={errors} />
                             {websiteFor === "company" && <InputField name="companyName" control={control} placeholder="Company Name" errors={errors} />}
                             {websiteFor === "company" && <div className="flex flex-col md:flex-row w-full gap-2">
@@ -163,7 +167,8 @@ export const Contact = () => {
 
                             <motion.button
                                 type="submit"
-                                className="bg-blue-600 hover:bg-blue-700 text-white font-medium py-2 px-4 rounded-md transition duration-300"
+                                className="bg-blue-600 hover:bg-blue-700 text-white flex justify-start items-start 
+        font-medium py-2 px-4 rounded-lg transition duration-300 self-start"
                             >
                                 Submit
                             </motion.button>
@@ -171,15 +176,15 @@ export const Contact = () => {
                     </motion.div>}
                 {thankuVisible &&
                     <motion.div
-                    
-                    initial={{ opacity: 0, y: -20 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.5 }}
-                    className="bg-transparent flex flex-col justify-center items-center text-white"
-                        
+
+                        initial={{ opacity: 0, y: -20 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 0.5 }}
+                        className="bg-transparent flex flex-col justify-center items-center text-white"
+
                     >
                         <h1 className="md:text-5xl text-2xl mb-5 text-center">
-                            Thank You for choosing Elential
+                            Thank You for choosing <Cover>Elential</Cover>
                         </h1>
                         <p className="md:text-3xl text-xl">We'll reach out to you soon!</p>
                     </motion.div>}

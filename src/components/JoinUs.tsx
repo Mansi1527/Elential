@@ -8,6 +8,9 @@ import Typewriter from "typewriter-effect";
 import { motion } from "framer-motion";
 import { HamIcon, Menu } from "lucide-react";
 import Image from "next/image";
+// import ChromeDinoGame from 'react-chrome-dino';
+import DinoGame from 'react-chrome-dino-ts'
+// import Dino from "./dino/dino";
 export const JoinUs = () => {
     const sectionRef = useRef(null);
     const [typingKey, setTypingKey] = useState(0); // Key to reset Typewriter
@@ -40,7 +43,7 @@ export const JoinUs = () => {
                     {/* Tabs Section */}
                     <div className="flex items-center gap-2 px-4 py-2 bg-gray-200 rounded-t-lg">
                         <div className="flex items-center gap-2 px-4 py-1 bg-white rounded-md">
-                            <span className="text-sm text-gray-700">Elevate</span>
+                            <span className="text-sm text-gray-700">Elential</span>
                             <button className="text-gray-500 hover:text-black">&times;</button>
                         </div>
                         <div className="flex items-center gap-2 px-4 py-1 bg-gray-300 rounded-md">
@@ -59,7 +62,7 @@ export const JoinUs = () => {
                             </svg></span>
                             <input
                                 type="text"
-                                placeholder="www.elevate.in"
+                                placeholder="www.elential.in"
                                 className="flex-grow bg-transparent focus:outline-none"
                             />
                         </div>
@@ -101,7 +104,7 @@ export const JoinUs = () => {
                             <Typewriter
                                 key={typingKey + 1} // Ensure unique key for independent resets
                                 options={{
-                                    strings: ["Focus on your web apps"],
+                                    strings: ["Want to see our past work?"],
                                     autoStart: true,
                                     loop: false,
                                     delay: 50,
@@ -111,18 +114,19 @@ export const JoinUs = () => {
                         </h1>
 
                         <p className="hidden md:block md:mb-5 mb-2 text-sm text-gray-500 md:text-lg">
-                            In today's digital world, every company relies on apps to engage customers and drive business success. Elevate your ability to build, manage, and deploy high-quality apps at scale with us—empowering innovation and growth every step of the way. 🚀
+                        Curious about what we’ve built? 🚀 Dive into our past projects and see how we’ve transformed ideas into powerful, high-performing apps. From sleek designs to seamless functionality, our work speaks for itself. Let’s create something amazing together! 
                         </p>
                         <p className="md:hidden mb-2 text-sm text-gray-500">
                             Build, manage, and deploy high-quality apps at scale.Build, manage, and deploy high-quality apps at scale. Build, manage, and deploy high-quality apps at scale. 🚀
                         </p>
-
+                        <Link href="#contactus">
                         <button
-                            className="w-full mb-2 hover:bg-black hover:text-blue-500 hover:drop-shadow-2xl hover:transition hover:duration-500 md:mb-2 btn text-sm md:text-xl btn-primary btn-sm md:btn-lg sm:mb-0"
+                            className="rounded-2xl  mb-2 hover:bg-black hover:text-blue-500 hover:drop-shadow-2xl hover:transition hover:duration-500 md:mb-2 text-sm md:text-xl bg-blue-500  btn-sm md:btn-lg sm:mb-0"
                         >
-                            <Link href="#contactus" className="md:flex hidden">Get Started with Us</Link>
-                            <Link href="#contactus" className="md:hidden">Get Started </Link>
+                            <h1  className="md:flex hidden">Journey Through Our Creations</h1>
+                            <h1  className="md:hidden">Unlock Innovation </h1>
                         </button>
+                        </Link>
                     </div>
                 </section>
 
@@ -229,4 +233,8 @@ export const JoinUs = () => {
             </div>
         </div>
     );
-};
+// return(
+//     // <Dino/>
+//     <DinoGame/>
+// )
+}

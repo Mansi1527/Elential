@@ -17,7 +17,10 @@ export const Schema = yup.object().shape({
         then: (schema) => schema.required("Company type is required"),
         otherwise: (schema) => schema.notRequired()
     }),
-    websiteType: yup.string().required("Website type is required"),
+    websiteType: yup
+    .string()
+    .oneOf(["Static", "Dynamic"], "Please select a valid website type")
+    .required("Website type is required"),
     budget: yup
         .number()
         .typeError("Budget must be a number")
