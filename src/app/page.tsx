@@ -45,22 +45,22 @@ export default function Home() {
     {
       name: "Home",
       link: "#home",
-      icon: <IconHome className="h-4 w-4 text-neutral-500 dark:text-white" />,
+      icon: <IconHome className="h-4 w-4 text-neutral-500 " />,
     },
     {
       name: "Services",
       link: "#services",
-      icon: <IconUser className="h-4 w-4 text-neutral-500 dark:text-white" />,
+      icon: <IconUser className="h-4 w-4 text-neutral-500 " />,
     },
     {
       name: "Reviews",
       link: "#reviews",
-      icon: <IconMessage className="h-4 w-4 text-neutral-500 dark:text-white" />,
+      icon: <IconMessage className="h-4 w-4 text-neutral-500 " />,
     },
     {
       name: "Projects",
       link: "https://ggopen.my.canva.site/designs-portfolio",
-      icon: <GoProjectSymlink className="h-4 w-4 text-neutral-500 dark:text-white" />,
+      icon: <GoProjectSymlink className="h-4 w-4 text-neutral-500 " />,
     }
   ];
 
